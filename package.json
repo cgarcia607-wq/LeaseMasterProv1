@@ -1,59 +1,23 @@
-import React, { useState, useMemo } from 'react';
-import { 
-  Calculator, MessageSquare, ShieldAlert, 
-  CheckCircle2, AlertCircle, Copy, Sparkles, 
-  TrendingDown, Zap, Info, DollarSign, MousePointer2
-} from 'lucide-react';
-
-const fmt = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
-
-export default function LeaseMasterPro() {
-  const [view, setView] = useState('dashboard');
-  const [copied, setCopied] = useState(false);
-  const [tone, setTone] = useState('professional');
-  const [useApr, setUseApr] = useState(true);
-  
-  // Input State
-  const [inputs, setInputs] = useState({
-    msrp: 50000, 
-    sellPrice: 47000, 
-    term: 36, 
-    resPercent: 58, 
-    apr: 4.5, 
-    mf: 0.001875, 
-    downPmt: 3000, 
-    acqFee: 695, 
-    docFee: 899, 
-    regFee: 350,
-    taxRate: 8.0, 
-    taxMethod: 'monthly', 
-    state: 'CA', 
-    escCost: 0, 
-    dealerName: 'Local Dealer', 
-    vehicleName: '2024 Vehicle'
-  });
-
-  const stateTaxLookup = {
-    "TX": "capcost", "VA": "capcost", "MD": "capcost", "SD": "capcost", "MT": "capcost",
-    "NY": "upfront", "NJ": "upfront", "MN": "upfront", "OH": "upfront", "GA": "upfront", "NH": "upfront",
-    "IL": "depreciation",
-    "AL": "monthly", "AK": "monthly", "AZ": "monthly", "AR": "monthly", "CA": "monthly", "CO": "monthly", 
-    "CT": "monthly", "DE": "monthly", "FL": "monthly", "HI": "monthly", "ID": "monthly", "IN": "monthly", 
-    "IA": "monthly", "KS": "monthly", "KY": "monthly", "LA": "monthly", "ME": "monthly", "MA": "monthly", 
-    "MI": "monthly", "MS": "monthly", "MO": "monthly", "NE": "monthly", "NV": "monthly", "NC": "monthly", 
-    "ND": "monthly", "OK": "monthly", "OR": "monthly", "PA": "monthly", "RI": "monthly", "SC": "monthly", 
-    "TN": "monthly", "UT": "monthly", "VT": "monthly", "WA": "monthly", "WV": "monthly", "WI": "monthly", 
-    "WY": "monthly", "DC": "monthly", "NM": "monthly"
-  };
-
-  const states = [
-    { code: 'AL', name: 'Alabama' }, { code: 'AK', name: 'Alaska' }, { code: 'AZ', name: 'Arizona' },
-    { code: 'AR', name: 'Arkansas' }, { code: 'CA', name: 'California' }, { code: 'CO', name: 'Colorado' },
-    { code: 'CT', name: 'Connecticut' }, { code: 'DE', name: 'Delaware' }, { code: 'FL', name: 'Florida' },
-    { code: 'GA', name: 'Georgia' }, { code: 'HI', name: 'Hawaii' }, { code: 'ID', name: 'Idaho' },
-    { code: 'IL', name: 'Illinois' }, { code: 'IN', name: 'Indiana' }, { code: 'IA', name: 'Iowa' },
-    { code: 'KS', name: 'Kansas' }, { code: 'KY', name: 'Kentucky' }, { code: 'LA', name: 'Louisiana' },
-    { code: 'ME', name: 'Maine' }, { code: 'MD', name: 'Maryland' }, { code: 'MA', name: 'Massachusetts' },
-    { code: 'MI', name: 'Michigan' }, { code: 'MN', name: 'Minnesota' }, { code: 'MS', name: 'Mississippi' },
-    { code: 'MO', name: 'Missouri' }, { code: 'MT', name: 'Montana' }, { code: 'NE', name: 'Nebraska' },
-    { code: 'NV', name: 'Nevada' }, { code: 'NH', name: 'New Hampshire' }, { code: 'NJ', name: 'New Jersey
+{
+  "name": "lease-pro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.344.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.4",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  }
+}
